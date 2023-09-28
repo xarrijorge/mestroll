@@ -18,14 +18,14 @@
         <BarChartView />
       </article>
     </section>
-    <main class="tables">
-      <section class="excuses">
+    <main class="flex">
+      <section class="excuses w-1/2">
         <h2 class="underline">Approved Excuses</h2>
         <ul v-for="item in excuses" :key="item.name">
             {{ item.name }} - {{ item.excuse }}
         </ul>
       </section>
-        <table class="attendance border-collapse border border-slate-500 table-auto">
+        <table class="border-collapse border border-slate-500 table-auto w-1/2">
           <caption>
             Attendance
           </caption>
@@ -40,24 +40,68 @@
               <td class="border border-slate-700 ...">Maku</td>
               <td class="border border-slate-700 ...">dwIndianapolis</td>
             </tr>
+            <tr>
+              <td class="border border-slate-700 ...">Saveline</td>
+              <td class="border border-slate-700 ...">Columbus</td>
+            </tr>
+            <tr>
+              <td class="border border-slate-700 ...">Sila</td>
+              <td class="border border-slate-700 ...">Detroit</td>
+            </tr>
           </tbody>
         </table>
     </main>
   </div>
 </template>
 <script>
-import CheckInView from "../components/CheckInView.vue";
-import LineChartView from "../components/charts/LineChartView"
-import BarChartView from "../components/charts/BarChartView"
+import CheckInView from '../components/CheckInView.vue'
+import LineChartView from '../components/charts/LineChartView.vue'
+import BarChartView from '../components/charts/BarChartView.vue'
+
 export default {
-    data() {
-        return {
-            username: this.currentUser ?? "Saveline" 
-        };
+  components: { CheckInView, BarChartView, LineChartView },
+  data() {
+    return {
+      username: this.currentUser ?? 'Saveline',
+      excuses: [{name: "Xarri", excuse: "Out Sick"}, {name: "Taz", excuse: "Personal Emergency"}]
+    }
+  },
+  methods: {
+    logout() {
+      this.$router.push('/login');
     },
-    components: { CheckInView, LineChartView, BarChartView }
+  }
 }
 </script>
+<style scoped>
+.dashboard{
+  padding: 20px;
+  width: 80vw;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+}
+.header{
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  height: min-content;
+}
+.header * {
+  margin: 0 20px;
+}
+.logout{
+  margin-left: auto;
+}
+.charts{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 100%;
+}
+</style>
 <style scoped>
 .dashboard{
   padding: 20px;

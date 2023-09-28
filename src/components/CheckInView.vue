@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>Welcome {{ username }}</h1>
-  </div>
-  <div>
+    <p>Welcome {{ username }}</p>
     <label for="rooms">Choose a room:</label>
 
     <select name="rooms" id="rooms">

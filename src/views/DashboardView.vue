@@ -1,24 +1,24 @@
-<template>
-  <div class="px-20 flex flex-col align-center">
-    <div class="flex justify-between align-center">
+<template >
+  <div class="px-20 flex flex-col align-center dashboard">
+    <header class="header">
       <CheckInView :username="username" />
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Send Prompt
       </button>
-      <button @click="logout" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+      <button @click="logout" class="bg-yellow-500 logout hover:bg-yellow-700 py-2 px-4 rounded">
        Log Out 
       </button>
 
-    </div>
-    <section class="flex w-4/5">
-      <article class="w-1/2">
+    </header>
+    <section class="charts">
+      <article>
         <LineChartView />
       </article>
-      <article class="w-1/2">
+      <article>
         <BarChartView />
       </article>
     </section>
-    <main class="flex flex-row pt-500px">
+    <main class="flex">
       <section class="excuses w-1/2">
         <h2 class="underline">Approved Excuses</h2>
         <ul v-for="item in excuses" :key="item.name">
@@ -73,3 +73,32 @@ export default {
   }
 }
 </script>
+<style scoped>
+.dashboard{
+  padding: 20px;
+  width: 80vw;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+}
+.header{
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  height: min-content;
+}
+.header * {
+  margin: 0 20px;
+}
+.logout{
+  margin-left: auto;
+}
+.charts{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 100%;
+}
+</style>

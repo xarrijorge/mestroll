@@ -22,18 +22,19 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ['January', 'February', 'March'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
         datasets: [
           {
             label: 'Month',
-            backgroundColor: '#C2C7EF',
-            data: [40, 20, 12]
+            backgroundColor: '#C3C7EF',
+            data: [50, 48, 52, 40, 45, 32, 50, 50],
           }
         ]
       },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: true,
+        tension: 0.3,
         legend: {
           display: true, // Set this to true to display the legend
           position: "top", // You can change the position to "bottom", "left", "right"

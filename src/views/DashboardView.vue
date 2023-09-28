@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="px-20 flex flex-col align-center dashboard">
     <header class="header">
       <CheckInView :username="username" />
@@ -6,9 +6,8 @@
         Send Prompt
       </button>
       <button @click="logout" class="bg-yellow-500 logout hover:bg-yellow-700 py-2 px-4 rounded">
-       Log Out 
+        Log Out
       </button>
-
     </header>
     <section class="charts">
       <article>
@@ -22,26 +21,32 @@
       <section class="excuses">
         <h2 class="underline">Approved Excuses</h2>
         <ul v-for="item in excuses" :key="item.name">
-            {{ item.name }} - {{ item.excuse }}
+          {{
+            item.name
+          }}
+          -
+          {{
+            item.excuse
+          }}
         </ul>
       </section>
-        <table class="attendance">
-          <caption>
-            Attendance
-          </caption>
-          <thead>
-            <tr>
-              <th class="border border-slate-600 ...">EIT</th>
-              <th class="border border-slate-600 ...">Time in</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border border-slate-700 ...">Maku</td>
-              <td class="border border-slate-700 ...">dwIndianapolis</td>
-            </tr>
-          </tbody>
-        </table>
+      <table class="attendance">
+        <caption>
+          Attendance
+        </caption>
+        <thead>
+          <tr>
+            <th class="border border-slate-600 ...">EIT</th>
+            <th class="border border-slate-600 ...">Country</th>
+          </tr>
+        </thead>
+        <tbody v-for="person in attendance" :key="person.name">
+          <tr>
+            <td class="border border-slate-700">{{ person.name }}</td>
+            <td class="border border-slate-700">{{ person.country}}</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </div>
 </template>
@@ -55,18 +60,29 @@ export default {
   data() {
     return {
       username: this.currentUser ?? 'Saveline',
-      excuses: [{name: "Xarri", excuse: "Out Sick"}, {name: "Taz", excuse: "Personal Emergency"}]
+      attendance: [
+        { name: 'Nkwi Loh', country: 'Cameroon' },
+        { name: 'Sila Kironji', country: 'Kenya' },
+        { name: 'Muthoni Peris Muriuki', country: 'Kenya' },
+        { name: 'Maku Maku', country: 'Uganda' },
+        { name: 'Sika Nana Antwi', country: 'Ghana' },
+        { name: 'Sara Kadoon', country: 'Nigeria' },
+      ],
+      excuses: [
+        { name: 'Xarri', excuse: 'Out Sick' },
+        { name: 'Taz', excuse: 'Personal Emergency' }
+      ]
     }
   },
   methods: {
     logout() {
-      this.$router.push('/login');
-    },
+      this.$router.push('/login')
+    }
   }
 }
 </script>
 <style scoped>
-.dashboard{
+.dashboard {
   padding: 20px;
   width: 80vw;
   max-width: 100vw;
@@ -74,7 +90,7 @@ export default {
   margin: 0 auto;
   display: flex;
 }
-.header{
+.header {
   margin: 20px 0;
   padding: 10px 0;
   display: flex;
@@ -83,10 +99,10 @@ export default {
 .header * {
   margin: 0 20px;
 }
-.logout{
+.logout {
   margin-left: auto;
 }
-.charts{
+.charts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 0 auto;
@@ -95,7 +111,7 @@ export default {
 }
 </style>
 <style scoped>
-.dashboard{
+.dashboard {
   padding: 20px;
   width: 80vw;
   max-width: 100vw;
@@ -103,7 +119,7 @@ export default {
   margin: 0 auto;
   display: flex;
 }
-.header{
+.header {
   margin: 20px 0;
   padding: 10px 0;
   display: flex;
@@ -112,17 +128,17 @@ export default {
 .header * {
   margin: 0 20px;
 }
-.logout{
+.logout {
   margin-left: auto;
 }
-.charts{
+.charts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 0 auto;
   margin-bottom: 50px;
   width: 100%;
 }
-.tables{
+.tables {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
@@ -133,26 +149,31 @@ export default {
   width: 100%;
 }
 
-.attendance td, .attendance th {
+.attendance td,
+.attendance th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-.attendance tr:nth-child(even){background-color: #f2f2f2;}
+.attendance tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-.attendance tr:hover {background-color: #ddd;}
+.attendance tr:hover {
+  background-color: #ddd;
+}
 
 .attendance th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #C2C7EF;
+  background-color: #c2c7ef;
   color: white;
 }
-.attendance caption{
+.attendance caption {
   font-size: 20px;
 }
-.excuses{
+.excuses {
   border-right: 1px solid grey;
   margin-right: 20px;
   background-color: rgb(243, 238, 238);

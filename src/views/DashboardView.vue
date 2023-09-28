@@ -47,13 +47,15 @@
 </template>
 <script>
 import CheckInView from "../components/CheckInView.vue";
+import LineChartView from "../components/charts/LineChartView"
+import BarChartView from "../components/charts/BarChartView"
 export default {
     data() {
         return {
             username: this.currentUser ?? "Saveline" 
         };
     },
-    components: { CheckInView }
+    components: { CheckInView, LineChartView, BarChartView }
 }
 </script>
 <style scoped>

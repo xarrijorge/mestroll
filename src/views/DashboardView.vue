@@ -18,14 +18,14 @@
         <BarChartView />
       </article>
     </section>
-    <main class="flex">
-      <section class="excuses w-1/2">
+    <main class="tables">
+      <section class="excuses">
         <h2 class="underline">Approved Excuses</h2>
         <ul v-for="item in excuses" :key="item.name">
             {{ item.name }} - {{ item.excuse }}
         </ul>
       </section>
-        <table class="border-collapse border border-slate-500 table-auto w-1/2">
+        <table class="attendance">
           <caption>
             Attendance
           </caption>
@@ -39,14 +39,6 @@
             <tr>
               <td class="border border-slate-700 ...">Maku</td>
               <td class="border border-slate-700 ...">dwIndianapolis</td>
-            </tr>
-            <tr>
-              <td class="border border-slate-700 ...">Saveline</td>
-              <td class="border border-slate-700 ...">Columbus</td>
-            </tr>
-            <tr>
-              <td class="border border-slate-700 ...">Sila</td>
-              <td class="border border-slate-700 ...">Detroit</td>
             </tr>
           </tbody>
         </table>

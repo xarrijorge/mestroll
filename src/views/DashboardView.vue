@@ -2,9 +2,13 @@
   <div class="px-20 flex flex-col align-center">
     <div class="flex justify-between align-center">
       <CheckInView :username="username" />
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded teal">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Send Prompt
       </button>
+      <button @click="logout" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+       Log Out 
+      </button>
+
     </div>
     <section class="flex w-4/5">
       <article class="w-1/2">
@@ -55,12 +59,17 @@ import LineChartView from '../components/charts/LineChartView.vue'
 import BarChartView from '../components/charts/BarChartView.vue'
 
 export default {
+  components: { CheckInView, BarChartView, LineChartView },
   data() {
     return {
       username: this.currentUser ?? 'Saveline',
       excuses: [{name: "Xarri", excuse: "Out Sick"}, {name: "Taz", excuse: "Personal Emergency"}]
     }
   },
-  components: { CheckInView, BarChartView, LineChartView }
+  methods: {
+    logout() {
+      this.$router.push('/login');
+    },
+  }
 }
 </script>

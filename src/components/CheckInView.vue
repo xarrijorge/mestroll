@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome (name of fellow/staff)</h1>
+    <h1>Welcome {{ username }}</h1>
   </div>
   <div>
     <label for="rooms">Choose a room:</label>
@@ -12,3 +12,8 @@
     </select>
   </div>
 </template>
+<script>
+export default {
+  props: ["username"]
+}
+</script>

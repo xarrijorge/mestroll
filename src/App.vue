@@ -5,16 +5,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <!-- <div class="nav flex flex-wrap items-center justify-between px-4"> -->
-    <!-- <nav> -->
-    <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
-    <!-- <RouterLink to="/login">Fellows Landing page</RouterLink> -->
-    <!-- <RouterLink to="/checkin">Checkin</RouterLink> -->
-    <!-- <RouterLink to="/dashboard">Dashboard</RouterLink> -->
-    <!-- </nav> -->
-    <!-- </div> -->
-    <!-- Main navigation container -->
     <nav class="nav flex flex-wrap items-center justify-between px-4">
       <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
         <svg

@@ -64,7 +64,7 @@ export default {
         { name: 'Nkwi Loh', country: 'Cameroon' },
         { name: 'Sila Kironji', country: 'Kenya' },
         { name: 'Muthoni Peris Muriuki', country: 'Kenya' },
-        { name: 'Maku Maku', country: 'Uganda' },
+        { name: 'Maku Mazakpe', country: 'Uganda' },
         { name: 'Sika Nana Antwi', country: 'Ghana' },
         { name: 'Sara Kadoon', country: 'Nigeria' },
       ],

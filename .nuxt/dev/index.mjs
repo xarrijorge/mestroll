@@ -523,6 +523,7 @@ function getRouteRulesForPath(path) {
   return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
 }
 
+<<<<<<< Updated upstream
 const script = `
 if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
   Object.defineProperty(window, '__NUXT_DEVTOOLS_TIME_METRIC__', {
@@ -542,6 +543,10 @@ const _ddqcCEtxBu = (function(nitro) {
 
 const plugins = [
   _ddqcCEtxBu
+=======
+const plugins = [
+  
+>>>>>>> Stashed changes
 ];
 
 function defineRenderHandler(handler) {

@@ -55,7 +55,10 @@
   },
   "include": [
     "./types/nitro-nuxt.d.ts",
+<<<<<<< Updated upstream
     "../node_modules/@nuxt/devtools/runtime/server",
+=======
+>>>>>>> Stashed changes
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./types/nitro.d.ts",
     "../**/*",

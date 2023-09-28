@@ -80,14 +80,20 @@
   "include": [
     "./nuxt.d.ts",
     "../**/*",
+<<<<<<< Updated upstream
     "../node_modules/@nuxt/devtools/runtime",
+=======
+>>>>>>> Stashed changes
     "../node_modules/@nuxt/telemetry/runtime",
     ".."
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
+<<<<<<< Updated upstream
     "../node_modules/@nuxt/devtools/runtime/server",
+=======
+>>>>>>> Stashed changes
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
     "../.output"

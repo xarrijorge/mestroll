@@ -23,14 +23,14 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'],
         datasets: [
           {
             label: 'In Class',
             color: '#C3C7EF',
             backgroundColor: 'royalBlue',
             borderColor: '#c3c7ef',
-            data: [50, 48, 52, 40, 45, 32, 50, 50],
+            data: [50, 48, 51, 40, 45, 32, 50, 50, 51, 49, 48, 51],
             yAxisID: 'y'
           },
           {
@@ -38,7 +38,7 @@ export default {
             color: '#f87979',
             backgroundColor: 'pink',
             borderColor: '#f87979',
-            data: [5, 4, 6, 4, 5, 3, 5, 8],
+            data: [1, 3, 0, 11, 6, 19, 1, 1, 0, 2, 3, 0 ],
             yAxisID: 'y1'
           }
         ]

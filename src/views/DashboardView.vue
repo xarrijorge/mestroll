@@ -4,7 +4,7 @@
       <CheckInView :username="username"/>
       <div class="buttonbox">
       <button class="prompt"> Send Prompt </button>
-      <button class="logout hover:bg-red-500 py-2 px-4 rounded"> Log Out </button>
+      <button @click="logout" class="logout hover:bg-red-500 py-2 px-4 rounded"> Log Out </button>
       </div>
     </header>
     <section class="charts">

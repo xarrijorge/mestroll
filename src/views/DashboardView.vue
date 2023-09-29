@@ -12,6 +12,7 @@
         <LineChartView />
       </article>
       <article>
+            <th class="border border-slate-600 ...">EIT</th>
         <BarChartView />
       </article>
     </section>
@@ -43,12 +44,14 @@
         <thead>
           <tr>
             <th class="border border-slate-600 ...">EIT</th>
+            <th class="border border-slate-600 ...">Time in</th>
             <th class="border border-slate-600 ...">Country</th>
           </tr>
         </thead>
         <tbody v-for="person in attendance" :key="person.name">
           <tr>
             <td class="border border-slate-700">{{ person.name }}</td>
+            <td class="border border-slate-700">{{ person.timestamp}}</td>
             <td class="border border-slate-700">{{ person.country}}</td>
           </tr>
         </tbody>
@@ -70,12 +73,12 @@ export default {
     return {
       username: this.currentUser ?? 'Fellow',
       attendance: [
-        { name: 'Nkwi Loh', country: 'Cameroon' },
-        { name: 'Sila Kironji', country: 'Kenya' },
-        { name: 'Muthoni Peris Muriuki', country: 'Kenya' },
-        { name: 'Maku Mazakpe', country: 'Uganda' },
-        { name: 'Sika Nana Antwi', country: 'Ghana' },
-        { name: 'Sara Kadoon', country: 'Nigeria' },
+        { name: 'Nkwi Loh', country: 'Cameroon', timestamp: "9:00" },
+        { name: 'Sila Kironji', country: 'Kenya', timestamp: "9:00" },
+        { name: 'Muthoni Peris Muriuki', country: 'Kenya', timestamp: "9:00" },
+        { name: 'Maku Mazakpe', country: 'Uganda', timestamp: "9:00" },
+        { name: 'Sika Nana Antwi', country: 'Ghana', timestamp: "9:00"},
+        { name: 'Sara Kadoon', country: 'Nigeria' , timestamp: "9:00"},
       ],
       excuses: [
         { name: 'Kaba', excuse: 'Out Sick' },

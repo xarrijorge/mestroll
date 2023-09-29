@@ -13,14 +13,14 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue'),
-      beforeEnter(to) {
-        alert('please log in first')
-        // redirect back to log in page
-        if (to.name !== "login"){
-          return "/"
-        }
+      // beforeEnter(to) {
+      //   alert('please log in first')
+      //   // redirect back to log in page
+      //   if (to.name !== "login"){
+      //     return "/"
+      //   }
         
-      }
+      // }
 
     }
 

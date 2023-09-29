@@ -27,17 +27,17 @@ export default {
         datasets: [
           {
             label: 'In Class',
-            color: '#C3C7EF',
+            color: '#1d49a6',
             backgroundColor: 'royalBlue',
-            borderColor: '#c3c7ef',
+            borderColor: '#4d83f7',
             data: [50, 48, 51, 40, 45, 32, 50, 50, 51, 49, 48, 51],
             yAxisID: 'y'
           },
           {
             label: 'Absent',
-            color: '#f87979',
+            color: '#E0474B',
             backgroundColor: 'pink',
-            borderColor: '#f87979',
+            borderColor: '#E0474B',
             data: [1, 3, 0, 11, 6, 19, 1, 1, 0, 2, 3, 0 ],
             yAxisID: 'y1'
           }

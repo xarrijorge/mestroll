@@ -1,13 +1,11 @@
 <template>
   <div class="px-20 flex flex-col align-center dashboard">
     <header class="header">
-      <CheckInView :username="username" />
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Send Prompt
-      </button>
-      <button @click="logout" class="bg-yellow-500 logout hover:bg-yellow-700 py-2 px-4 rounded">
-        Log Out
-      </button>
+      <CheckInView :username="username"/>
+      <div class="buttonbox">
+      <button class="prompt"> Send Prompt </button>
+      <button class="logout hover:bg-red-500 py-2 px-4 rounded"> Log Out </button>
+      </div>
     </header>
     <section class="charts">
       <article>
@@ -19,16 +17,24 @@
     </section>
     <main class="tables">
       <section class="excuses">
-        <h2 class="underline">Approved Excuses</h2>
-        <ul v-for="item in excuses" :key="item.name">
-          {{
-            item.name
-          }}
-          -
-          {{
-            item.excuse
-          }}
-        </ul>
+        <table class="attendance">
+        <caption>
+         Approved Excuses 
+        </caption>
+        <thead>
+          <tr>
+            <th class="border border-slate-600 ...">EIT</th>
+            <th class="border border-slate-600 ...">Reason for Absence</th>
+          </tr>
+        </thead>
+        <tbody v-for="item in excuses" :key="item.name">
+          <tr>
+            <td class="border border-slate-700">{{ item.name }}</td>
+            <td class="border border-slate-700">{{ item.excuse}}</td>
+          </tr>
+        </tbody>
+      </table>
+
       </section>
       <table class="attendance">
         <caption>
@@ -48,6 +54,9 @@
         </tbody>
       </table>
     </main>
+    <footer>
+
+    </footer>
   </div>
 </template>
 <script>
@@ -59,7 +68,7 @@ export default {
   components: { CheckInView, BarChartView, LineChartView },
   data() {
     return {
-      username: this.currentUser ?? 'Saveline',
+      username: this.currentUser ?? 'Fellow',
       attendance: [
         { name: 'Nkwi Loh', country: 'Cameroon' },
         { name: 'Sila Kironji', country: 'Kenya' },
@@ -69,8 +78,12 @@ export default {
         { name: 'Sara Kadoon', country: 'Nigeria' },
       ],
       excuses: [
-        { name: 'Xarri', excuse: 'Out Sick' },
-        { name: 'Taz', excuse: 'Personal Emergency' }
+        { name: 'Kaba', excuse: 'Out Sick' },
+        { name: 'Taz', excuse: 'Personal Emergency' },
+        { name: 'Derek', excuse: 'Out Sick' },
+        { name: 'Courtney', excuse: 'Eye Checkup' },
+        { name: 'Nunya', excuse: 'Out Sick' },
+        { name: 'Rawk', excuse: 'Out Sick' },
       ]
     }
   },
@@ -84,17 +97,17 @@ export default {
 <style scoped>
 .dashboard {
   padding: 20px;
+  padding-bottom: 500px;
   width: 80vw;
   max-width: 100vw;
-  height: 100vh;
   margin: 0 auto;
   display: flex;
 }
 .header {
-  margin: 20px 0;
   padding: 10px 0;
   display: flex;
-  height: min-content;
+  align-items: center;
+  justify-content: center;
 }
 .header * {
   margin: 0 20px;
@@ -106,37 +119,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   width: 100%;
-}
-</style>
-<style scoped>
-.dashboard {
-  padding: 20px;
-  width: 80vw;
-  max-width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-}
-.header {
-  margin: 20px 0;
-  padding: 10px 0;
-  display: flex;
-  height: min-content;
-}
-.header * {
-  margin: 0 20px;
-}
-.logout {
-  margin-left: auto;
-}
-.charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: 0 auto;
-  margin-bottom: 50px;
-  width: 100%;
+  min-height: 40vh;
 }
 .tables {
   display: grid;
@@ -167,16 +152,49 @@ export default {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #c2c7ef;
+  background-color: #1d49a6;
   color: white;
 }
 .attendance caption {
   font-size: 20px;
 }
 .excuses {
-  border-right: 1px solid grey;
   margin-right: 20px;
-  background-color: rgb(243, 238, 238);
-  padding: 20px;
+  /* padding: 20px; */
+}
+.logout{
+  background-color: #E0474B;
+  color: whitesmoke;
+  margin-left: auto;
+  padding: 10px;
+}
+
+.prompt{
+  padding: 10px;
+  background-color: #0038B0;
+  color: whitesmoke;
+  border-radius: 5px;
+  
+}
+.buttonbox{
+  width: auto;
+  display: flex;
+}
+
+@media (max-width: 720px) {
+  header{
+    width: 90vw;
+  }
+  .buttonbox{
+    flex-direction: column;
+    font-size: 10px;
+  }
+  .buttonbox *{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .excuses{
+    margin: 0;
+  }
 }
 </style>

@@ -7,17 +7,23 @@ const router = createRouter({
       path: '/',
       name: 'login',
       component: () => import('../views/FellowsLoginPage.vue'),
-      alias: '/login'
-
+      alias: '/login',
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/DashboardView.vue')
+      component: () => import('../views/DashboardView.vue'),
+      // beforeEnter(to) {
+      //   alert('please log in first')
+      //   // redirect back to log in page
+      //   if (to.name !== "login"){
+      //     return "/"
+      //   }
+        
+      // }
 
     }
 
   ]
 })
-
 export default router
